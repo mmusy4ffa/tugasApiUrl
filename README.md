@@ -24,7 +24,7 @@ lalu sistem akan menampilkan email yang tercantum
 untuk penggunaan filter sedikit ditambahkan kode php dan html seperti digambar
 ![nomor 2](image-7.png)
 setelah selesai maka akan seperti ini dan filter bisa menggunakan nama atau id, dan juga keduanya
-![tampilan filter awal](image-9.png)
+![tampilan filter](image-3.png)
 ![hasil filter](image-10.png)
 
 menambahkan sedikit kode css agar terlihat menarik
