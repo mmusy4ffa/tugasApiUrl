@@ -14,4 +14,4 @@ TUGAS PRAKIKUM API
 ![tampilan](image-8.png) setelah selesai maka akan seperti ini dan filter bisa menggunakan nama atau id, dan juga keduanya
 ![filter](image-9.png)
 
-![mengubah css](image-10.png)menambahkan sedikit kode css agar terlihat menarik
+![tampilan](image-11.png))menambahkan sedikit kode css agar terlihat menarik
