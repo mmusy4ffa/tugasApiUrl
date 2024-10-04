@@ -1,32 +1,31 @@
 <?php
-$url= "https://jsonplaceholder.typicode.com/comments";
+$url = "https://jsonplaceholder.typicode.com/comments";
 $response = file_get_contents($url);
 $data = json_decode($response, true);
 
-// Initialize filter variables
 $filter_id = '';
 $filter_name = '';
 
-// Check if the filter form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $filter_id = isset($_POST['filter_id']) ? intval($_POST['filter_id']) : '';
     $filter_name = isset($_POST['filter_name']) ? $_POST['filter_name'] : '';
 }
 
-// Filter data based on the input
-$filtered_data = array_filter($data, function($comment) use ($filter_id, $filter_name) {
+$filtered_data = array_filter($data, function ($comment) use ($filter_id, $filter_name) {
     return (!$filter_id || $comment['id'] == $filter_id) &&
-           (!$filter_name || stripos($comment['name'], $filter_name) !== false);
+        (!$filter_name || stripos($comment['name'], $filter_name) !== false);
 });
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Comments (PHP)</title>
     <link rel="stylesheet" href="tampilan.css">
 </head>
+
 <body>
     <h1>Data Comments dari JSONPlaceholder API (PHP)</h1>
 
@@ -50,7 +49,7 @@ $filtered_data = array_filter($data, function($comment) use ($filter_id, $filter
             </tr>
         </thead>
         <tbody>
-            <?php foreach($filtered_data as $comment): ?>
+            <?php foreach ($filtered_data as $comment): ?>
                 <tr>
                     <td><?php echo $comment['id']; ?></td>
                     <td><?php echo htmlspecialchars($comment['name']); ?></td>
@@ -61,4 +60,5 @@ $filtered_data = array_filter($data, function($comment) use ($filter_id, $filter
         </tbody>
     </table>
 </body>
+
 </html>
